@@ -1,9 +1,3 @@
-# path to the template pptx
-PATH_PPTX = "example/template.pptx"
-
-# path to data csv
-PATH_DATA = "example/data.csv"
-
 """
 Configuration related to images
 All properties are required
@@ -22,6 +16,7 @@ each object in the list:
     height: Height of image in <unit>
     width: Width of image in <unit>
 """
+
 IMG_CONF = [
     {
         "name": "{{image0}}",

@@ -4,7 +4,7 @@ import re
 from copy import deepcopy
 from pptx.util import Inches, Pt, Cm, Mm
 
-from config import PATH_DATA, PATH_PPTX, IMG_CONF
+from config import IMG_CONF
 
 def is_text_placeholder(shape):
     """
@@ -82,7 +82,7 @@ def replace_text_keep_formatting(text_frame, search_str, replace_str):
 
 def add_images(slide, header, data):
     """
-    Adds all images specified in {PATH_DATA}
+    Adds all images specified in csv
     For this to happen, you also have to update config.py
     The config for images is specified there seperately
 
@@ -113,7 +113,7 @@ def add_images(slide, header, data):
             img_index = header.index(name)
         except ValueError:
             print(f"The image placeholder {name} doesn't "
-                    f"exist in {PATH_DATA}")
+                    "exist in the csv")
             continue
 
         file_path = data[img_index]
@@ -151,7 +151,7 @@ def replace_text_placeholders(slide, header, data):
                 data_index = header.index(placeholder)
             except ValueError:
                 print(f"The placeholder {placeholder} doesn't "
-                        f"exist in {PATH_PPTX}")
+                        "exist in the template")
                 continue
 
             replace_text_keep_formatting(shape.text_frame,

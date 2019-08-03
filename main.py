@@ -1,11 +1,25 @@
+import argparse
 from pptx import Presentation
 
-from config import PATH_DATA, PATH_PPTX
 from data import get_data_csv
 from utils import duplicate_slide, add_images, replace_text_placeholders
 
-pr = Presentation(pptx=PATH_PPTX)
-header, rows = get_data_csv(PATH_DATA)
+
+ap = argparse.ArgumentParser(
+        prog="csv2pptx",
+        description="Generate slides in a presentation using a "
+                    "template with placeholders"
+        )
+
+ap.add_argument("-t", "--template", required=True,
+        help="Path to the template presentation")
+ap.add_argument("-d", "--data", required=True,
+        help="Path to the csv data")
+
+args = vars(ap.parse_args())
+
+pr = Presentation(pptx=args["template"])
+header, rows = get_data_csv(args["data"])
 
 for row in rows:
     new_slide = duplicate_slide(pr)

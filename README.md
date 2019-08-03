@@ -17,7 +17,7 @@ Generate slides in a presentation using a template with placeholders
     _Check the `example` directory and `config.py` to check exactly how_
 5. After you have added all the required files[template, images, csv], run
     ```bash
-    python3 main.py
+    python3 main.py -t "example/template.pptx" -d "example/data.csv"
     ```
 6. The generated file is `gen.pptx` in the current directory
 
@@ -26,6 +26,7 @@ Generate slides in a presentation using a template with placeholders
   you can simply create a new textbox and seperate the two.
 2. The order of images in `config.py` specifies the z-index too. Images defined earlier are
   placed before the rest.
+3. Make sure that the path in csv data is relative to `main.py`
 
 ## Todo
 1. Proper error handling
