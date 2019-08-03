@@ -1,0 +1,11 @@
+{{title}},{{text}},{{description}},{{image0}},{{image1}}
+title0,text0,"The content can have ',' too, just quote it!",example/img0.png,example/img1.png
+title1,text1,Make sure you have only one placeholder in a textbox,example/img1.png,example/img0.png
+title2,text2,¯\_(ツ)_/¯,example/img0.png,example/img1.png
+title3,text3,42,example/img1.png,example/img0.png
+title4,text4,Too tired to add actual content here,example/img0.png,example/img1.png
+title5,text5,Some random text,example/img1.png,example/img0.png
+title6,text6,Why did I add so many slides?!,example/img0.png,example/img1.png
+title7,text7,vim is the best text editor,example/img1.png,example/img0.png
+title8,text8,python is cool,example/img0.png,example/img1.png
+title9,text9,i use arch btw,example/img1.png,example/img0.png
