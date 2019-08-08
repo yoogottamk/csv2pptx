@@ -117,6 +117,10 @@ def add_images(slide, header, data):
             continue
 
         file_path = data[img_index]
+
+        if file_path == '':
+            continue
+
         left = unit(conf.get("left"))
         top = unit(conf.get("top"))
         width = unit(conf.get("width"))

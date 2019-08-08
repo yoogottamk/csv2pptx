@@ -4,7 +4,6 @@ from pptx import Presentation
 from data import get_data_csv
 from utils import duplicate_slide, add_images, replace_text_placeholders
 
-
 ap = argparse.ArgumentParser(
         prog="csv2pptx",
         description="Generate slides in a presentation using a "
@@ -22,7 +21,11 @@ pr = Presentation(pptx=args["template"])
 header, rows = get_data_csv(args["data"])
 
 for row in rows:
-    new_slide = duplicate_slide(pr)
+    index = 0
+    if "{{index}}" in header:
+        index = int(row[header.index("{{index}}")])
+
+    new_slide = duplicate_slide(pr, index)
 
     # add all images
     success_img = add_images(new_slide, header, row)
